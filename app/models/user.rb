@@ -16,8 +16,10 @@ class User < ActiveRecord::Base
     primary_key: :id,
     class_name: 'Poll'
 
-  has_many :responses
-    #TODO
+  has_many :responses,
+    foreign_key: :user_id,
+    primary_key: :id,
+    class_name: 'Response'
 
 
 end

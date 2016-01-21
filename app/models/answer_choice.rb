@@ -19,8 +19,8 @@ class AnswerChoice < ActiveRecord::Base
     primary_key: :id,
     class_name: 'Question'
 
-  belongs_to :responses,
-    foreign_key: :response_id,
+  has_many :responses,
+    foreign_key: :answer_choice_id,
     primary_key: :id,
     class_name: 'Response'
 

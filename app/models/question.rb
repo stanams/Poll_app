@@ -10,7 +10,7 @@
 #
 
 class Question < ActiveRecord::Base
-  validates :text, presence: true
+  validates :question_body, presence: true
 
   belongs_to :poll,
     foreign_key: :poll_id,
@@ -23,7 +23,18 @@ class Question < ActiveRecord::Base
     primary_key: :id,
     class_name: 'AnswerChoice'
 
+  has_many :responses,
+    through: :answer_choices,
+    source: :responses
 
+  def results
+    result = Hash.new
+    Response.all.each do |choice|
+      result[choice] += 1 
+    end
+    result
+
+  end
 
 
 end

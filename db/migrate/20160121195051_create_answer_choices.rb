@@ -1,7 +1,7 @@
 class CreateAnswerChoices < ActiveRecord::Migration
   def change
     create_table :answer_choices do |t|
-      t.text :answer_choice_body, null: false
+      t.string :answer_choice_body, null: false
       t.integer :question_id, null: false
       t.integer :response_id
 

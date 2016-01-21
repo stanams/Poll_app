@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(version: 20160121213550) do
 
   create_table "answer_choices", force: :cascade do |t|
-    t.text     "answer_choice_body", null: false
+    t.string   "answer_choice_body", null: false
     t.integer  "question_id",        null: false
     t.integer  "response_id"
     t.datetime "created_at"
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20160121213550) do
   add_index "polls", ["author_id"], name: "index_polls_on_author_id"
 
   create_table "questions", force: :cascade do |t|
-    t.text     "question_body", null: false
+    t.string   "question_body", null: false
     t.integer  "poll_id",       null: false
     t.datetime "created_at"
     t.datetime "updated_at"

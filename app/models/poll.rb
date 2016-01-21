@@ -6,9 +6,8 @@ class Poll < ActiveRecord::Base
     primary_key: :id,
     class_name: 'User'
 
-  belongs_to :questions,
-    foreign_key: :question_id,
+  has_many :questions,
+    foreign_key: :poll_id,
     primary_key: :id,
     class_name: 'Question'
-
 end

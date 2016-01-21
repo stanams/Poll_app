@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
     class_name: 'Poll'
 
   has_many :responses
-    
+    #TODO
 
 
 end

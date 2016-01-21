@@ -1,3 +1,12 @@
+# == Schema Information
+#
+# Table name: polls
+#
+#  id        :integer          not null, primary key
+#  title     :string           not null
+#  author_id :integer          not null
+#
+
 class Poll < ActiveRecord::Base
   validates :title, presence: true
 
